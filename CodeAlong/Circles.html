@@ -9,12 +9,18 @@
 		var path = new Path();
 		// Give the stroke a color
 		path.strokeColor = 'red';
-		var start = new Point(175, 125);
+		var start = new Point(100, 150);
 		// Move to start and draw a line from there
 		path.moveTo(start);
 		// Note the plus operator on Point objects.
 		// PaperScript does that for us, and much more!
-	path.lineTo(start + [ 150, -100 ]);
+	path.lineTo(start + [ 30, -70 ]);
+
+var rectangle = new Rectangle(new Point(100, 50), new Point(150, 100));
+var cornerSize = new Size(20, 20);
+var path = new Path.RoundRectangle(rectangle, cornerSize);
+path.fillColor = 'black';
+
 	</script>
 </head>
 <body>
