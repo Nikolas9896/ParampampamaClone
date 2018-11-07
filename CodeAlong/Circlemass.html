@@ -7,14 +7,29 @@
 	<title>CicleGrid</title>
 	<script type="text/paperscript" canvas="myCanvas">
 	
-		function AddCicle(i,j){
+	function randomColor()
+	{
+	//pick "red" from 0 - 255
+	var red1 =Math.floor(Math.random()*256);
+	//pick "green" from 0 - 255
+	var green1 = Math.floor(Math.random()*256);
+	//pick "blue" from 0 - 255
+	var blue1 = Math.floor(Math.random()*256);
+	//pick "opicity level";
+	var opicity = (Math.floor(Math.random()*9))/10;
+	
+	return "rgba("+ red1 +", " + green1 + ", " + blue1 +", "+ opicity + ")";
+
+	}
+
+	function AddCicle(i,j){
 	var myCircle = new Path.Circle(new Point(i, j), 10);
-	myCircle.fillColor = 'orange';
+	myCircle.fillColor = randomColor();
 		}
 for (var j =  0; j <= 800; j+=100) {
 	console.log("This is J= " + j);
 
-	for (var i = 0; i <= 1500; i+=100) {
+	for (var i = 0; i <= 900; i+=100) {
 	
 		AddCicle(i,j);
 		console.log("This is I= " + i);
