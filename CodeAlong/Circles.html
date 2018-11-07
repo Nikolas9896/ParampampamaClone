@@ -4,7 +4,9 @@
 	<title>Circles</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/Circles.css">
 	<script type="text/paperscript" canvas="myCanvas">
+
 		// Create a Paper.js Path to draw a line into it:
 		var path = new Path();
 		// Give the stroke a color
@@ -14,13 +16,13 @@
 		path.moveTo(start);
 		// Note the plus operator on Point objects.
 		// PaperScript does that for us, and much more!
-	path.lineTo(start + [ 30, -70 ]);
+	path.lineTo(start + [ 500, -70 ]);
 
-var rectangle = new Rectangle(new Point(100, 50), new Point(150, 100));
-var cornerSize = new Size(20, 20);
+var rectangle = new Rectangle(new Point(100, 50), new Point(200, 100));
+var cornerSize = new Size(10, 50);
 var path = new Path.RoundRectangle(rectangle, cornerSize);
 path.fillColor = 'steelblue';
-var myCircle = new Path.Circle(new Point(200, 90), 30);
+var myCircle = new Path.Circle(new Point(200, 90), 20);
 myCircle.fillColor = 'Orange'
 
 	</script>
