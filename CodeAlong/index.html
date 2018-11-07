@@ -6,9 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Music Circle</title>
 	<script type="text/paperscript" canvas="myMusic">
-		var myCircle = new Path.Circle(new Point(100, 70), 50);
-	myCircle.fillColor = 'White';
-
+		function onKeyDown(event) {
+			new Path.Circle(new Point(100,100), 20).fillColor ="orange";
+		}
+			
 	</script>
 </head>
 <body>
