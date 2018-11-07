@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/circlemass.css">
+	<title>CicleGrid</title>
+	<script type="text/paperscript" canvas="myCanvas">
+	
+		function AddCicle(i,j){
+	var myCircle = new Path.Circle(new Point(i, j), 10);
+	myCircle.fillColor = 'orange';
+		}
+for (var j =  0; j <= 800; j+=100) {
+	console.log("This is J= " + j);
+
+	for (var i = 0; i <= 1500; i+=100) {
+	
+		AddCicle(i,j);
+		console.log("This is I= " + i);
+		
+	
+		}
+	}
+
+	</script>
+
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+</body>
+</html>
