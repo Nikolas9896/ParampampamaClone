@@ -10,8 +10,8 @@
 		// Create a Paper.js Path to draw a line into it:
 		var path = new Path();
 		// Give the stroke a color
-		path.strokeColor = 'red';
-		var start = new Point(100, 150);
+		path.strokeColor = 'rgba(7f, 2f, 255, 0.3)';
+		var start = new Point(100, 200);
 		// Move to start and draw a line from there
 		path.moveTo(start);
 		// Note the plus operator on Point objects.
@@ -21,13 +21,13 @@
 var rectangle = new Rectangle(new Point(100, 50), new Point(300, 400));
 var cornerSize = new Size(20, 20);
 var path = new Path.RoundRectangle(rectangle, cornerSize);
-path.fillColor = 'steelblue';
+path.fillColor = 'rgba(7f, 2f, 255, 0.3)';
 
 var myCircle = new Path.Circle(new Point(500, 200), 100);
-myCircle.fillColor = 'Orange';
+myCircle.fillColor = 'rgba(7f, 2f, 255, 0.3)';
 
 var myCircle2 = new Path.Circle(new Point(700, 400), 200);
- myCircle2.fillColor = 'Yellow';
+myCircle2.fillColor = 'rgba(7f, 2f, 255, 0.3)';
 
 
 	</script>
