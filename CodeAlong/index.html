@@ -7,7 +7,11 @@
 	<title>Music Circle</title>
 	<script type="text/paperscript" canvas="myMusic">
 		function onKeyDown(event) {
-			new Path.Circle(new Point(100,100), 20).fillColor ="orange";
+			var maxPoint = new Point(view.size.width, view.size.height);
+			console.log(maxPoint);
+			new Path.Circle(maxPoint, 20).fillColor ="orange";
+			console.log(view.size.height);
+			console.log(view.size.width);
 		}
 			
 	</script>
