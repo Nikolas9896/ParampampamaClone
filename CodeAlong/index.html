@@ -18,9 +18,15 @@
 			
 			console.log(view.size.height);
 			console.log(view.size.width);
+		
 		}
-		var animateCircle = new Path.Circle(new Point (300,300),100);
-			animateCircle.fillColor = "red";
+		var animatedCircle = new Path.Circle(new Point (300,300),100);
+			animatedCircle.fillColor = "red";
+
+			function onFrame(event){
+			animatedCircle.fillColor.hue+=1;
+		}
+
 			
 	</script>
 </head>
