@@ -6,25 +6,31 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Music Circle</title>
 	<script type="text/paperscript" canvas="myMusic">
+	
+		var circles = [];
+
 		function onKeyDown(event) {
 			var maxPoint = new Point(view.size.width, view.size.height);
 
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
-
-			console.log(maxPoint);
+			var newCircle = new Path.Circle(point, 10);
+			 newCircle.fillColor = "orange";
+			circles.push(newCircle);
 			
-			new Path.Circle(point, 20).fillColor ="orange";
-			
-			console.log(view.size.height);
-			console.log(view.size.width);
-		
 		}
+		
 		var animatedCircle = new Path.Circle(new Point (300,300),100);
 			animatedCircle.fillColor = "red";
 
 			function onFrame(event){
-			animatedCircle.fillColor.hue+=1;
+				for(var i = 0; i < circles.length; i++)
+					{
+						circles[i].fillColor.hue += 1;
+						circles[i].scale(.9);
+					}
+			animatedCircle.fillColor.hue += 1;
+			//animatedCircle.scale(.9);
 		}
 
 			
