@@ -3,13 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Music Circle</title>
 	<script type="text/paperscript" canvas="myMusic">
-	
+		
+		var sound = new Howl({
+ 			 src: ['sound.mp3']
+			});
+
+		sound.play();
+
+
 		var circles = [];
 
 		function onKeyDown(event) {
+			sound.play();
 			var maxPoint = new Point(view.size.width, view.size.height);
 
 			var randomPoint = Point.random();
