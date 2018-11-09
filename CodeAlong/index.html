@@ -8,13 +8,27 @@
 	<title>Music Circle</title>
 	<script type="text/paperscript" canvas="myMusic">
 		
-		var sound1 = new Howl({
- 			 src: ['sounds/bubbles.mp3']
-			});
+		var keyData = {
+			a: {
+					color: "purple",
+					sound: new Howl({
+						src: ['sounds/bubbles.mp3']
+					})
+				},
 
-		var sound2 = new Howl({
- 			 src: ['sounds/wipe.mp3']
-			});
+			s: {
+					color: "green",
+					sound: new Howl({
+					src: ['sounds/wipe.mp3']
+					})
+				},
+			d: {
+					color: "blue",
+					sound: new Howl({
+					src: ['sounds/confetti.mp3']
+					})
+				}
+		}
 
 		
 
@@ -22,28 +36,34 @@
 		var circles = [];
 
 		function onKeyDown(event) {
-
+			if(keyData[event.key]){
 			var maxPoint = new Point(view.size.width, view.size.height);
-
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
 			var newCircle = new Path.Circle(point, 500);
-			if (event.key === "a")
-				{
-					sound1.play();
-					newCircle.fillColor = "#2c3e50";
-				}
-			else if (event.key ==="s") 
-			{
-				sound2.play();
-				newCircle.fillColor = "#16a085";
+			// if (event.key === "a")
+			// 	{
+			// 		sound1.play();
+			// 		newCircle.fillColor = "#2c3e50";
+			// 	}
+			// else if (event.key ==="s") 
+			// {
+			// 	sound2.play();
+			// 	newCircle.fillColor = "#16a085";
+			// }
+
+			// else
+			// {
+			// 	newCircle.fillColor = "orange";
+			// }
+
+			//***********chack key press and give the write Color
+			newCircle.fillColor = keyData[event.key].color;
+			//***********play Musik
+			keyData[event.key]sound.play();
+			circles.push(newCircle);
 			}
 
-			else
-			{
-				newCircle.fillColor = "orange";
-			}
-			circles.push(newCircle);
 			
 		}
 		
